@@ -1,0 +1,40 @@
+@import "../../scss/helper";
+
+.list {
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    flex-basis: 50%;
+  }
+}
+
+.item,
+.activeItem {
+  border: 1px solid #000;
+}
+
+.activeItem {
+  background-color: #8787876a;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid black;
+    transform: translateY(-50%);
+  }
+}
+
+.button {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  height: 100%;
+}
